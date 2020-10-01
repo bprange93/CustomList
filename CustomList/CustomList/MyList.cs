@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    class MyList<T>
+    public class MyList<T>
     {
         public int count;
         public int capacity;
