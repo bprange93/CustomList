@@ -22,10 +22,15 @@ namespace CustomList
             _items = new T[capacity];
         }
 
-        //public void Add(T item)
-        //{
-        //    _items[count] = item;
-        //    count++;
-        //}
+        public void Add(T item)
+        {
+            _items[count] = item;
+            count++;
+        }
+        public void Remove(T item)
+        {
+            _items[count] = item;
+            count--;
+        }
     }
 }

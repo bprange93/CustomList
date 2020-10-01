@@ -28,5 +28,27 @@ namespace CustomListUnitTest
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Remove_TwoPositiveVaule_CountTwo()
+        {
+            //arrange
+            MyList<int> myList = new MyList<int>();
+            int value1 = 1;
+            int value2 = 2;
+            int value3 = 3;
+            int expected = 0;
+            int actual;
+
+
+            //act
+            myList.Remove(value2);
+            myList.Remove(value3);
+            actual = myList.count;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
