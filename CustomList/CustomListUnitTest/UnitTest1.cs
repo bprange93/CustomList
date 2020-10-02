@@ -37,12 +37,13 @@ namespace CustomListUnitTest
             int value1 = 1;
             int value2 = 2;
             int value3 = 3;
-            int expected = 0;
+            int expected = 1;
             int actual;
 
 
             //act
-            myList.Remove(value2);
+            myList.Add(value1);
+            myList.Add(value2);
             myList.Remove(value3);
             actual = myList.count;
 
