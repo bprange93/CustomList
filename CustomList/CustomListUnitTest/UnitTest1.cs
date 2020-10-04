@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomList;
-
+using System.Security.Cryptography.X509Certificates;
+using System.Collections;
 
 namespace CustomListUnitTest
 {
@@ -68,8 +69,38 @@ namespace CustomListUnitTest
             myList.Add(value3);
             actual = (value1.ToString() + "," + value2.ToString() + "," + value3.ToString());
 
-            //assert
+            
+            //assert           
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Add_TwoListsTogether()
+        {
+            //act
+            MyList<int> myList1 = new MyList<int>() { 1, 3, 5 };
+            MyList<int> myList2 = new MyList<int>() { 2, 4, 6 };
+            MyList<int> expected = new MyList<int>() { 1, 3, 5, 2, 4, 6 };
+            string actual;
+
+            //arrange
+            actual = myList1.ToString() + myList2.ToString();
+
+
+            //assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+        }
+        //[TestMethod]
+        //public void Overload_PlusMethod()
+        //{
+        //    //act
+
+        //    //arrange
+        //    value += value1;
+        //    value += value2;
+        //    value +=
+        //    actual = value
+        //    //assert
+
+        //}
     }
 }

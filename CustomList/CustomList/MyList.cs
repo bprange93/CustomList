@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class MyList<T>
+    public class MyList<T> : IEnumerable<T>
     {
         public int count;
         public int capacity;
@@ -27,10 +28,21 @@ namespace CustomList
             _items[count] = item;
             count++;
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(T item)
         {
             _items[count] = item;
             count--;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }
