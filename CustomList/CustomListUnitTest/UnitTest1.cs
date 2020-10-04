@@ -30,7 +30,7 @@ namespace CustomListUnitTest
         }
 
         [TestMethod]
-        public void Remove_TwoPositiveVaule_CountTwo()
+        public void Remove_TwoPositiveVaule_CountOne()
         {
             //arrange
             MyList<int> myList = new MyList<int>();
@@ -50,6 +50,26 @@ namespace CustomListUnitTest
             //assert
             Assert.AreEqual(expected, actual);
 
+        }
+        [TestMethod]
+        public void Remove_ToStringMethod()
+        {
+            //act
+            MyList<int> myList = new MyList<int>();
+            int value1 = 1;
+            int value2 = 2;
+            int value3 = 3;
+            string expected = "1,2,3";
+            string actual;
+
+            //arrange
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
+            actual = (value1.ToString() + "," + value2.ToString() + "," + value3.ToString());
+
+            //assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
